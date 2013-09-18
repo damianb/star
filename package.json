@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "name": "star-dev",
+  "author": "Damian Bushong <katana@codebite.net>",
+  "description": "desktop image gallery",
+  "homepage": "https://github.com/damianb/star",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/damianb/star.git"
+  },
+  "devDependencies": {
+    "uglify-js": "~2.3.6",
+    "jade": "~0.31.1",
+    "less": "~1.4.0",
+    "coffee-script": "~1.6.3",
+    "mkdirp": "~0.3.5",
+    "async": "~0.2.9"
+  }
+}
