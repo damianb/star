@@ -12,9 +12,9 @@ angular.module('star', ['starCore'])
 		$routeProvider
 			.when('/404', { templateUrl: 'templates/404.html' })
 			.when('/image', { redirectTo: '/list' })
-			.when('/', { templateUrl: 'templates/latest.html', controller: controllers.ListImages })
-			.when('/list', { templateUrl: 'templates/latest.html', controller: controllers.ListImages })
-			.when('/list/:page', { templateUrl: 'templates/latest.html', controller: controllers.ListImages })
+			.when('/', { templateUrl: 'templates/latest.html', controller: controllers.ImageList })
+			.when('/list', { templateUrl: 'templates/latest.html', controller: controllers.ImageList })
+			.when('/list/:page', { templateUrl: 'templates/latest.html', controller: controllers.ImageList })
 
 			#.when('/image/new', { templateUrl: 'templates/latest.html', controller: controllers.ImageNew })
 			#.when('/image/import', { templateUrl: 'templates/latest.html', controller: controllers.ImageImport })
