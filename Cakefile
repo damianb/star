@@ -43,16 +43,11 @@ files =
 		'star'
 	]
 	coffee: [
-		'client'
-		'client_authorize'
-		'core'
-		'global'
-		'stream'
-		'timeline'
-		'ui'
+		'app'
+		'star'
 	]
 	copy: [
-		'templates/entries.jade'
+		'templates/404.html.jade'
 		'css/bootstrap.min.css'
 		'js/bootstrap.min.js'
 		'js/jquery.min.js'
