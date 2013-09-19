@@ -55,7 +55,7 @@ angular.module('star', ['starCore'])
 
 			#.when('/image/new', { templateUrl: 'templates/latest.html', controller: controllers.ImageNew })
 			#.when('/image/import', { templateUrl: 'templates/latest.html', controller: controllers.ImageImport })
-			.when('/image/:imageId', { templateUrl: 'templates/image_view.html', controller: controllers.ImageView })
+			.when('/image/:imageId', { templateUrl: 'templates/ImageView.html', controller: controllers.ImageView })
 			#.when('/image/:imageId/edit', { templateUrl: '', controller: controllers.ImageEdit })
 			.otherwise({redirectTo: '/404'}) # todo change?
 	])
