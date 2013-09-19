@@ -1,4 +1,4 @@
-controllers.ImageList = ($scope, $routeParams, core) ->
+controllers.ImageList = ($scope, $routeParams, imagesDb) ->
 	# shim it.
 	if !$routeParams.page? then $routeParams.page = 1
 
@@ -16,7 +16,7 @@ controllers.ImageList = ($scope, $routeParams, core) ->
 
 	# we're restricting this to just stuff that has a thumbnail for now,
 	# because if it doesn't have a thumbnail, it's probably being processed still.
-	core.db.find { thumb: { $ne: null } }, (err, docs) ->
+	imagesDb.find { thumb: { $ne: null } }, (err, docs) ->
 		if err
 			# todo: do something in case of errors
 			return
@@ -40,4 +40,4 @@ controllers.ImageList = ($scope, $routeParams, core) ->
 		# only update this at the very end of iteration
 		$scope.pagination = pagination
 
-controllers.ImageList.$inject = ['$scope', '$routeParams', 'core']
+controllers.ImageList.$inject = ['$scope', '$routeParams', 'imagesDb']

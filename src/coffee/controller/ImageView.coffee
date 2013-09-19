@@ -1,6 +1,6 @@
-controllers.ImageView = ($scope, $routeParams, core) ->
+controllers.ImageView = ($scope, $routeParams, imagesDb) ->
 	# todo valiate that $routeParams.imageId is a string
-	core.db.find { _id: $routeParams.imageId }, (err, doc) ->
+	imagesDb.db.find { _id: $routeParams.imageId }, (err, doc) ->
 		if err
 			# todo: do something
 			return
@@ -18,4 +18,4 @@ controllers.ImageView = ($scope, $routeParams, core) ->
 			$scope.processed = true
 			$scope.image = doc
 
-controllers.ImageView.$inject = ['$scope', '$routeParams', 'core']
+controllers.ImageView.$inject = ['$scope', '$routeParams', 'imagesDb']
