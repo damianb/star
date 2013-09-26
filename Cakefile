@@ -47,7 +47,7 @@ files =
 		'star'
 	]
 	copy: [
-		'templates/404.html.jade'
+		'templates/404.html'
 		'css/bootstrap.min.css'
 		'js/bootstrap.min.js'
 		'js/jquery.min.js'
@@ -92,7 +92,7 @@ buildCommands =
 			else
 				"cp src/#{file} #{buildDir}/assets/#{file}"
 		controllers: ->
-			"coffee #{coffeeOpts} -j #{path.normalize(buildDir+'/assets/js/star/client/controllers.js')} src/client/controllers.coffee src/client/controller/"
+			"coffee #{coffeeOpts} -j #{path.normalize(buildDir+'/assets/js/star/client/controllers.js')} src/coffee/controllers.coffee src/coffee/controller/"
 		rootcopy: (file) ->
 			if isWindows
 				"copy /Y #{path.normalize('src/buildroot/'+file)} #{path.normalize(buildDir+'/'+file)}"
