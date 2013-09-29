@@ -91,3 +91,27 @@ d.run ->
 		setInterval ->
 			$('.reldate').relatizeDateTime()
 		, 45 # todo, maybe make 15 second intervals?
+
+		# handling drag/drop uploads
+		image = $('imagedisplay')
+		image[0].ondragover = ->
+			image.addClass 'hover'
+			false
+		image[0].ondragend = ->
+			image.removeClass 'hover'
+			false
+		image[0].ondrop = (e) ->
+			e.preventDefault()
+			image.removeClass 'hover'
+			files = e.originalEvent.dataTransfer.files
+
+			if files.length > 1
+				# todo: error - multiple file uploading isn't supported
+				false
+
+			if files.length is 0
+				# todo: error - no file dragged?
+				false
+
+			file = files.shift()
+			# work with file.path here
