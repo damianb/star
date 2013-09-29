@@ -1,0 +1,19 @@
+<div class="imageview">
+	<!-- todo, breadcrumbs? -->
+	<ul class="tags">
+		<li ng-repeat="tag in image.tags">{{ tag }}</li>
+	</ul>
+
+	<!-- don't show image if still processing? -->
+	<img ng-src="" class="image">
+
+	<div class="meta">
+		<span>md5</span>
+		<span>sha1</span>
+		<span>filesize</span>
+		<span>dimensions</span>
+		<span>rating</span>
+		<span>added</span>
+		<span>sources</span> <!-- list of URIs -->
+	</div>
+</div>

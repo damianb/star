@@ -1,0 +1,50 @@
+<div class="imagenew">
+	<script>
+		window.ondrop = window.ondragover = function(e) {
+			e.preventDefault()
+			return false
+		}
+	</script>
+	<form name="imagedata" class="form-horizontal">
+		<fieldset>
+			<legend>Add a new image</legend>
+
+			<div class="imagepreview">
+				<div class="imagedisplay"></div>
+				<!--
+				Todo: make this a set height/width, then add hover effects etc. to it.
+				will handle drag/drop "upload"
+				-->
+				<div class="imagemeta">
+					<span id="height"></span> &times; <span id="width"></span> (<span id="weight"></span>)
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="tags">Tags</label>
+				<div class="controls">
+					<textarea rows="3" id="tags"></textarea>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="source">Source</label>
+				<!-- todo allow for adding more sources with a button -->
+				<div class="controls">
+					<input type="text" id="source" placeholder="http://...">
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="rating">Rating</label>
+				<div class="controls">
+					<div class="btn-group" id="rating">
+						<button class="btn btn-success">Safe</button>
+						<button class="btn btn-warning">Questionable</button>
+						<button class="btn btn-danger">Explicit</button>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</div>
