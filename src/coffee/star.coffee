@@ -10,12 +10,12 @@ debug = (require 'debug')('client')
 # - global object prototype modifications...
 #
 
-global.Array::remove = (from, to) ->
+global.Array::remove = Array::remove = (from, to) ->
 	rest = @slice (to or from) + 1 or @length
 	@length = if from < 0 then @length + from else from
 	@push.apply @, rest
 
-global.Array::has = (entries...) ->
+global.Array::has = Array::has = (entries...) ->
 	hasEntries = true
 	process = =>
 		if (@indexOf entries.shift()) is -1
@@ -25,11 +25,11 @@ global.Array::has = (entries...) ->
 
 # todo remove?
 escapeHTML = require 'escape-html'
-global.String::escapeHTML = ->
+global.String::escapeHTML = String::escapeHTML = ->
 	escapeHTML @
 
 dateFormat = require 'dateformat'
-global.Date::format = (mask, utc) ->
+global.Date::format = Date::format = (mask, utc) ->
 	dateFormat @, mask, utc
 
 # global muckery...yuck. ;_;
