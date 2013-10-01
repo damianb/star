@@ -88,7 +88,6 @@ handleUpload = (image) ->
 		# todo: work with file.path here
 
 d.run ->
-
 	#
 	# - special key binds
 	# - there will be no compromise. these will not be allowed to be used
@@ -115,4 +114,4 @@ d.run ->
 		$('.reldate').relatizeDateTime()
 		setInterval ->
 			$('.reldate').relatizeDateTime()
-		, 45 # todo, maybe make 15 second intervals?
+		, 15

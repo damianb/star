@@ -34,7 +34,6 @@ files =
 		'assets/css'
 		'assets/img'
 		'assets/js/star'
-		'assets/js/star/client'
 		'assets/templates'
 	]
 	controllers: false
@@ -50,6 +49,7 @@ files =
 		'templates/404.html'
 		'css/bootstrap.min.css'
 		'js/bootstrap.min.js'
+		'js/angular.min.js'
 		'js/jquery.min.js'
 		'js/jquery.hotkeys.js'
 		'js/jquery.relatize_date.js'
@@ -92,7 +92,7 @@ buildCommands =
 			else
 				"cp src/#{file} #{buildDir}/assets/#{file}"
 		controllers: ->
-			"coffee #{coffeeOpts} -j #{path.normalize(buildDir+'/assets/js/star/client/controllers.js')} src/coffee/controllers.coffee src/coffee/controller/"
+			"coffee #{coffeeOpts} -j #{path.normalize(buildDir+'/assets/js/star/controllers.js')} src/coffee/controllers.coffee src/coffee/controller/"
 		rootcopy: (file) ->
 			if isWindows
 				"copy /Y #{path.normalize('src/buildroot/'+file)} #{path.normalize(buildDir+'/'+file)}"

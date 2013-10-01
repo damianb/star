@@ -1,4 +1,4 @@
-controllers = require './controllers'
+controllers = require './assets/js/star/controllers'
 debug = (require 'debug')('app')
 nedb  = require 'nedb'
 { gui } = global
