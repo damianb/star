@@ -51,6 +51,7 @@ files =
 		'templates/ImageNew.html'
 		'templates/ImageView.html'
 		'css/bootstrap.min.css'
+		'css/bootstrap-theme.min.css'
 		'js/bootstrap.min.js'
 		'js/angular.min.js'
 		'js/jquery.min.js'
