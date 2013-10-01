@@ -1,0 +1,11 @@
+<div class="imagelist">
+	<div class="badge" ng-repeat="image in images">
+		<div class="upper">
+			<img ng-src="{{ image.filename }}" alt="{{ image.tags.join(', ') }}">
+		</div>
+		<div class="lower">
+			<div class="rating unknown" ng-class="image.rating"></div>
+			<div class="dimensions">{{ image.size.height}}px &times; {{ image.size.width }}px</div>
+		</div>
+	</div>
+</div>
