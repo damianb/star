@@ -4,8 +4,11 @@ nedb  = require 'nedb'
 { gui } = global
 
 angular.module('starCore', [])
-	.factory('core', ->
-		return global.star
+	.factory('gui', ->
+		gui
+	)
+	.factory('manifest', ->
+		gui.App.manifest
 	)
 	.factory('imagesDb', ->
 		db = new nedb { autoload: true, nodeWebkitAppName: 'star', filename: 'images.db' }
@@ -28,7 +31,7 @@ angular.module('starCore', [])
 			tags: ['']
 		# todo constraints
 
-		return db
+		db
 	)
 	.factory('tagDb', ->
 		db = new nedb { autoload: true, nodeWebkitAppName: 'star', filename: 'tags.db' }
@@ -37,10 +40,7 @@ angular.module('starCore', [])
 			tag: ''
 		# todo constraints
 
-		return db
-	)
-	.factory('manifest', ->
-		return gui.App.manifest
+		db
 	)
 
 angular.module('star', ['starCore'])
