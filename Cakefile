@@ -47,6 +47,9 @@ files =
 	]
 	copy: [
 		'templates/404.html'
+		'templates/ImageList.html'
+		'templates/ImageNew.html'
+		'templates/ImageView.html'
 		'css/bootstrap.min.css'
 		'js/bootstrap.min.js'
 		'js/angular.min.js'
