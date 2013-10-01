@@ -1,6 +1,6 @@
 controllers = require './assets/js/star/controllers'
 debug = (require 'debug')('app')
-nedb  = require 'nedb'
+nedb = require 'nedb'
 { gui } = global
 
 angular.module('starCore', [])
@@ -44,18 +44,22 @@ angular.module('starCore', [])
 	)
 
 angular.module('star', ['starCore'])
+	.config(['$locationProvider', ($locationProvider) ->
+		$locationProvider.html5Mode false
+		$locationProvider.hashPrefix '!'
+	])
 	.config(['$routeProvider', ($routeProvider) ->
 		# define routes
 		$routeProvider
-			.when('/404', { templateUrl: 'templates/404.html' })
+			.when('/404', { templateUrl: './assets/templates/404.html' })
 			.when('/image', { redirectTo: '/list' })
-			.when('/', { templateUrl: 'templates/ImageList.html', controller: controllers.ImageList })
-			.when('/list', { templateUrl: 'templates/ImageList.html', controller: controllers.ImageList })
-			.when('/list/:page', { templateUrl: 'templates/ImageList.html', controller: controllers.ImageList })
+			.when('/', { templateUrl: './assets/templates/ImageList.html', controller: controllers.ImageList })
+			.when('/list', { templateUrl: './assets/templates/ImageList.html', controller: controllers.ImageList })
+			.when('/list/:page', { templateUrl: './assets/templates/ImageList.html', controller: controllers.ImageList })
 
-			#.when('/image/new', { templateUrl: 'templates/latest.html', controller: controllers.ImageNew })
-			#.when('/image/import', { templateUrl: 'templates/latest.html', controller: controllers.ImageImport })
-			.when('/image/:imageId', { templateUrl: 'templates/ImageView.html', controller: controllers.ImageView })
+			#.when('/image/new', { templateUrl: './assets/templates/latest.html', controller: controllers.ImageNew })
+			#.when('/image/import', { templateUrl: './assets/templates/latest.html', controller: controllers.ImageImport })
+			.when('/image/:imageId', { templateUrl: './assets/templates/ImageView.html', controller: controllers.ImageView })
 			#.when('/image/:imageId/edit', { templateUrl: '', controller: controllers.ImageEdit })
 			.otherwise({redirectTo: '/404'}) # todo change?
 	])
