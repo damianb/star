@@ -5,15 +5,15 @@
 	</ul>
 
 	<!-- don't show image if still processing? -->
-	<img ng-src="" class="image">
+	<img src="{{ image.filename }}" class="image">
 
 	<div class="meta">
-		<span>md5</span>
-		<span>sha1</span>
-		<span>filesize</span>
-		<span>dimensions</span>
-		<span>rating</span>
-		<span>added</span>
-		<span>sources</span> <!-- list of URIs -->
+		<span>md5: {{ image.md5 }}</span>
+		<span>sha1: {{ image.sha1 }}</span>
+		<span>filesize: {{ image.size.filesize }}</span>
+		<span>dimensions: {{ image.size.height }}px &times; {{ image.size.width }}px</span>
+		<span>rating: {{ image.size.rating }}</span>
+		<span>added: <time class="reldate" datetime="{{ new Date(image.created).format('isoDateTime') }}" title="{{ new Date(image.created).format('dddd, mmmm dS, yyyy HH:MM:ss')) }}">{{ new Date(image.created).format('') }}</time></span>
+		<span>sources: </span> <!-- list of URIs -->
 	</div>
 </div>

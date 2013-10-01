@@ -16,7 +16,7 @@
 				will handle drag/drop "upload"
 				-->
 				<div class="imagemeta">
-					<span id="height"></span> &times; <span id="width"></span> (<span id="weight"></span>)
+					<span id="height">0px</span> &times; <span id="width">0px</span> (<span id="weight">0b</span>)
 				</div>
 			</div>
 
@@ -29,7 +29,7 @@
 
 			<div class="control-group">
 				<label class="control-label" for="source">Source</label>
-				<!-- todo allow for adding more sources with a button -->
+				<!-- todo allow for adding more sources with a button...or just textarea split? dunno -->
 				<div class="controls">
 					<input type="text" id="source" placeholder="http://...">
 				</div>
@@ -37,6 +37,7 @@
 
 			<div class="control-group">
 				<label class="control-label" for="rating">Rating</label>
+				<span class="help-block">(required)</span>
 				<div class="controls">
 					<div class="btn-group" id="rating">
 						<button class="btn btn-success">Safe</button>
