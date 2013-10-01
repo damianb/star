@@ -4,6 +4,7 @@
 			e.preventDefault()
 			return false
 		}
+		handleUpload($('.imagedisplay')[0])
 	</script>
 	<form name="imagedata" class="form-horizontal">
 		<fieldset>
@@ -44,6 +45,12 @@
 						<button class="btn btn-warning">Questionable</button>
 						<button class="btn btn-danger">Explicit</button>
 					</div>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<div class="controls">
+					<button type="submit" class="btn">Submit</button>
 				</div>
 			</div>
 		</fieldset>

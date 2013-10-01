@@ -62,6 +62,31 @@ curwindow.on 'minimize', ->
 d = domain.create()
 d.on 'error', global.handleCrit
 
+# handling drag/drop "uploads"
+handleUpload = (image) ->
+	image.ondragover = ->
+		image.addClass 'hover'
+		false
+	image.ondragend = ->
+		image.removeClass 'hover'
+		false
+	image.ondrop = (e) ->
+		e.preventDefault()
+		image.removeClass 'hover'
+		#files = e.originalEvent.dataTransfer.files
+		files = e.dataTransfer.files
+
+		if files.length > 1
+			# todo: error - multiple file uploading isn't supported
+			false
+
+		if files.length is 0
+			# todo: error - no file dragged?
+			false
+
+		file = files.shift()
+		# todo: work with file.path here
+
 d.run ->
 
 	#
@@ -85,33 +110,9 @@ d.run ->
 	#
 
 	$().ready ->
-		$('#version').text("nw #{process.versions['node-webkit']}; node #{process.version}; crimson #{crimson.pkg.version}")
+		$('#version').text("nw #{process.versions['node-webkit']}; node #{process.version}")
 		$('footer').hide()
 		$('.reldate').relatizeDateTime()
 		setInterval ->
 			$('.reldate').relatizeDateTime()
 		, 45 # todo, maybe make 15 second intervals?
-
-		# handling drag/drop uploads
-		image = $('imagedisplay')
-		image[0].ondragover = ->
-			image.addClass 'hover'
-			false
-		image[0].ondragend = ->
-			image.removeClass 'hover'
-			false
-		image[0].ondrop = (e) ->
-			e.preventDefault()
-			image.removeClass 'hover'
-			files = e.originalEvent.dataTransfer.files
-
-			if files.length > 1
-				# todo: error - multiple file uploading isn't supported
-				false
-
-			if files.length is 0
-				# todo: error - no file dragged?
-				false
-
-			file = files.shift()
-			# work with file.path here
