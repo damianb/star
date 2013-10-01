@@ -32,7 +32,7 @@ buildDir = 'build/star.app'
 files =
 	builddirs: [
 		'assets/css'
-		'assets/img'
+		'assets/fonts'
 		'assets/js/star'
 		'assets/templates'
 	]
@@ -56,8 +56,10 @@ files =
 		'js/jquery.min.js'
 		'js/jquery.hotkeys.js'
 		'js/jquery.relatize_date.js'
-		'img/glyphicons-halflings-white.png'
-		'img/glyphicons-halflings.png'
+		'fonts/glyphicons-halflings-regular.eot'
+		'fonts/glyphicons-halflings-regular.svg'
+		'fonts/glyphicons-halflings-regular.ttf'
+		'fonts/glyphicons-halflings-regular.woff'
 	]
 	rootcopy: [
 		'package.json'
