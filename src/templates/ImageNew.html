@@ -1,4 +1,4 @@
-<div class="imagenew">
+<div class="container imagenew">
 	<script>
 		window.ondrop = window.ondragover = function(e) {
 			e.preventDefault()
@@ -6,7 +6,7 @@
 		}
 		handleUpload($('.imagedisplay')[0])
 	</script>
-	<form name="imagedata" class="form-horizontal">
+	<form name="imagedata" class="form-horizontal" role="form">
 		<fieldset>
 			<legend>Add a new image</legend>
 
@@ -37,15 +37,14 @@
 			</div>
 
 			<div class="form-group">
-				<label class="control-label" for="rating">Rating</label>
-				<span class="help-block">(required)</span>
+				<label class="control-label col-lg-2" for="rating">Rating</label>
 				<div class="col-lg-10">
 					<div class="btn-group" id="rating" data-toggle="buttons">
 						<label class="btn btn-success">
 							<input type="radio" name="options" id="rating1"> Safe
 						</label>
 						<label class="btn btn-warning">
-							<input type="radio" name="options" id="rating2"> Questionable
+							<input type="radio" name="options" id="rating2" checked> Questionable
 						</label>
 						<label class="btn btn-danger">
 							<input type="radio" name="options" id="rating3"> Explicit

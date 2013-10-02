@@ -1,8 +1,10 @@
 controllers = require './assets/js/star/controllers'
 debug = (require 'debug')('app')
 nedb = require 'nedb'
-{ gui } = global
+path = require 'path'
+{ gui, $ } = global
 
+#$('base').attr('href', path.dirname(window.location.href))
 angular.module('starCore', [])
 	.factory('gui', ->
 		gui
@@ -46,7 +48,7 @@ angular.module('starCore', [])
 angular.module('star', ['starCore'])
 	.config(['$locationProvider', ($locationProvider) ->
 		$locationProvider.html5Mode false
-		$locationProvider.hashPrefix '!'
+		#$locationProvider.hashPrefix '!'
 	])
 	.config(['$routeProvider', ($routeProvider) ->
 		# define routes
@@ -56,10 +58,9 @@ angular.module('star', ['starCore'])
 			.when('/', { templateUrl: './assets/templates/ImageList.html', controller: controllers.ImageList })
 			.when('/list', { templateUrl: './assets/templates/ImageList.html', controller: controllers.ImageList })
 			.when('/list/:page', { templateUrl: './assets/templates/ImageList.html', controller: controllers.ImageList })
-
-			#.when('/image/new', { templateUrl: './assets/templates/latest.html', controller: controllers.ImageNew })
-			#.when('/image/import', { templateUrl: './assets/templates/latest.html', controller: controllers.ImageImport })
+			.when('/image/new', { templateUrl: './assets/templates/ImageNew.html', controller: controllers.ImageNew })
+			.when('/image/import', { templateUrl: './assets/templates/ImageImport.html', controller: controllers.ImageImport })
 			.when('/image/:imageId', { templateUrl: './assets/templates/ImageView.html', controller: controllers.ImageView })
 			#.when('/image/:imageId/edit', { templateUrl: '', controller: controllers.ImageEdit })
-			.otherwise({redirectTo: '/404'}) # todo change?
+			.otherwise({redirectTo: '/404'})
 	])

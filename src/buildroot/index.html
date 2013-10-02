@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="star">
 	<head>
-		<base href="./">
+		<!--<base href="./">-->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" media="screen" href="assets/css/bootstrap.min.css">
@@ -18,14 +18,14 @@
 	</head>
 	<body>
 		<div id="wrap">
-			<header class="navbar navbar-default navbar-static-top">
+			<header class="navbar navbar-default navbar-fixed-top">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">star</a>
+					<a class="navbar-brand" href="#/">star</a>
 				</div>
 				<div class="navbar-collapse collapse">
 					<form class="navbar-form navbar-right">
@@ -41,9 +41,9 @@
 						</div>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/new">add</a></li>
-						<li><a href="/import">import</a></li>
-						<li><a href="/images">images</a></li>
+						<li><a href="#/image/new">add</a></li>
+						<li><a href="#/image/import">import</a></li>
+						<li><a href="#/list">images</a></li>
 					</ul>
 				</div>
 			</header>
