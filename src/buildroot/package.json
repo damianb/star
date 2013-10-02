@@ -12,9 +12,9 @@
   "main": "index.html",
   "single-instance": true,
   "window": {
-    "width": 380,
+    "width": 768,
     "height": 550,
-    "min_width": 320,
+    "min_width": 768,
     "min_height": 500,
     "toolbar": true
   },
