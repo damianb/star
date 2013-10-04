@@ -10,14 +10,18 @@
 		<fieldset>
 			<legend>Add a new image</legend>
 
-			<div class="imagepreview">
-				<div class="imagedisplay"></div>
-				<!--
-				Todo: make this a set height/width, then add hover effects etc. to it.
-				will handle drag/drop "upload"
-				-->
-				<div class="imagemeta">
-					<span id="height">0px</span> &times; <span id="width">0px</span> (<span id="weight">0b</span>)
+			<div class="form-group imagepreview">
+				<label class="control-label col-lg-2" for="Image">Image</label>
+				<div class="col-lg-10">
+					<div class="imagedisplay"></div>
+					<!--
+					Todo: make this a set height/width, then add hover effects etc. to it.
+					will handle drag/drop "upload"
+					-->
+					<div class="imagemeta">
+						<span id="height">0px</span> &times; <span id="width">0px</span> (<span id="weight">0b</span>)
+					</div>
+					<span class="help-block">(Drag an image into me!)</span>
 				</div>
 			</div>
 
@@ -25,6 +29,7 @@
 				<label class="control-label col-lg-2" for="tags">Tags</label>
 				<div class="col-lg-10">
 					<textarea rows="3" id="tags" class="form-control"></textarea>
+					<span class="help-block">(comma separated)</span>
 				</div>
 			</div>
 
